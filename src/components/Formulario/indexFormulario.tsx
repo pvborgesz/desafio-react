@@ -63,7 +63,7 @@ const Formulario: React.FC = () => {
             <InputText
               placeholder="Nome"
               required
-              onChange={(e) => {
+              onChange={(e: any) => {
                 setNome(e.target.value);
               }}
             ></InputText>
@@ -71,7 +71,7 @@ const Formulario: React.FC = () => {
               placeholder="Email"
               type={"email"}
               required
-              onChange={(e) => {
+              onChange={(e: any) => {
                 setEmail(e.target.value);
               }}
             ></InputText>
@@ -79,7 +79,7 @@ const Formulario: React.FC = () => {
           <AssuntoText
             required
             placeholder="Assunto"
-            onChange={(e) => {
+            onChange={(e: any) => {
               setAssunto(e.target.value);
               // console.log(nome);
             }}
@@ -87,7 +87,7 @@ const Formulario: React.FC = () => {
           <TextArea
             required
             placeholder="Mensagem"
-            onChange={(e) => {
+            onChange={(e: any) => {
               setMensagem(e.target.value);
               // console.log(nome);
             }}
@@ -97,7 +97,7 @@ const Formulario: React.FC = () => {
             <InputButton
               placeholder="Enviar"
               type="button"
-              onClick={(e) => {
+              onClick={(e: any) => {
                 e.persist();
                 configureForm();
               }}
@@ -105,25 +105,33 @@ const Formulario: React.FC = () => {
               Enviar
             </InputButton>
           </ButtonArea>
-        </Box>
-        <div className="response">
-          <br />
-          <hr />
-          <div>
-            {flagSubmited ? (
-              <>
-                <p>Nome: {dataForm?.nomeForm}</p>
-                <p>Email: {dataForm?.emailForm}</p>
-                <p>Assunto: {dataForm?.assuntoForm}</p>
-                <p>Mensagem: {dataForm?.mensagemForm}</p>
-                <hr />
-                Em Json:<pre> {jsonData}</pre>
-              </>
-            ) : (
-              <></>
-            )}
+          <div
+            className="response"
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              maxWidth: "50px",
+              overflowWrap: "break-word",
+            }}
+          >
+            <br />
+            <hr />
+            <div>
+              {flagSubmited ? (
+                <div>
+                  <p>Nome: {dataForm?.nomeForm}</p>
+                  <p>Email: {dataForm?.emailForm}</p>
+                  <p>Assunto: {dataForm?.assuntoForm}</p>
+                  <p>Mensagem: {dataForm?.mensagemForm}</p>
+                  <hr />
+                  Em Json:<pre> {jsonData}</pre>
+                </div>
+              ) : (
+                <></>
+              )}
+            </div>
           </div>
-        </div>
+        </Box>
       </Container>
     </>
   );
