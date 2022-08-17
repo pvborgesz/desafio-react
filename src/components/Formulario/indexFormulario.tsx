@@ -119,7 +119,6 @@ const Formulario: React.FC = () => {
             }}
           >
             <br />
-            <hr />
             <div>
               {flagSubmited ? (
                 <div>

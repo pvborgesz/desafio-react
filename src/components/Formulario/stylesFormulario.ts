@@ -15,7 +15,7 @@ export const Title = styled.div`
   background: #000000;
   color: white;
   text-align: center;
-
+  width: 28%;
   padding: 10px 25vw;
   border-radius: 5px;
   font-size: 30px;
@@ -35,6 +35,9 @@ export const Box = styled.div`
   flex-direction: column;
   padding: 5vh 5vw 5vh 5vw;
   width: 75%;
+  @media (min-width: 1200) {
+    width: 50%;
+  }
 `;
 
 export const InputText = styled.input`
