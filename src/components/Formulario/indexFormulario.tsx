@@ -63,6 +63,7 @@ const Formulario: React.FC = () => {
             <InputText
               placeholder="Nome"
               required
+              maxLength={30}
               onChange={(e: any) => {
                 setNome(e.target.value);
               }}
@@ -70,6 +71,7 @@ const Formulario: React.FC = () => {
             <InputText
               placeholder="Email"
               type={"email"}
+              maxLength={20}
               required
               onChange={(e: any) => {
                 setEmail(e.target.value);
@@ -79,6 +81,7 @@ const Formulario: React.FC = () => {
           <AssuntoText
             required
             placeholder="Assunto"
+            maxLength={50}
             onChange={(e: any) => {
               setAssunto(e.target.value);
               // console.log(nome);
@@ -87,6 +90,7 @@ const Formulario: React.FC = () => {
           <TextArea
             required
             placeholder="Mensagem"
+            maxLength={200}
             onChange={(e: any) => {
               setMensagem(e.target.value);
               // console.log(nome);
@@ -110,7 +114,7 @@ const Formulario: React.FC = () => {
             style={{
               display: "flex",
               flexWrap: "wrap",
-              maxWidth: "50px",
+              maxWidth: "100%",
               overflowWrap: "break-word",
             }}
           >
