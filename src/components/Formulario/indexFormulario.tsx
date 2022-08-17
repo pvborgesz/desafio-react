@@ -128,7 +128,10 @@ const Formulario: React.FC = () => {
                   <p>Assunto: {dataForm?.assuntoForm}</p>
                   <p>Mensagem: {dataForm?.mensagemForm}</p>
                   <hr />
-                  Em Json:<pre> {jsonData}</pre>
+                  Em Json:
+                  <>
+                    <pre> {jsonData}</pre>
+                  </>
                 </div>
               ) : (
                 <></>
